@@ -1,19 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <node-tree :treeData="treeData" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NodeTree from "./components/NodeTree.vue";
+import treeData from "../public/static/node_modules.json";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    NodeTree,
+  },
+  data: function () {
+    return {
+      treeData,
+    };
+  },
+};
 </script>
 
 <style>
