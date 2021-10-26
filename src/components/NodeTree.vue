@@ -31,7 +31,11 @@ export default {
   },
   methods: {
     handleSelectItem(itemPath) {
-      this.selectedItemPath = itemPath;
+      if (this.selectedItemPath !== itemPath) {
+        this.selectedItemPath = itemPath;
+      } else {
+        this.selectedItemPath = "";
+      }
     },
   },
 };
