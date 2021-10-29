@@ -24,26 +24,18 @@
       />
     </ul>
   </li>
-  <file-node
-    v-else-if="node.type === 'file'"
+  <item-node
+    v-else
     :node="node"
     :selectedItemPath="selectedItemPath"
     @select-item="handleOnClick"
     :pathToParent="pathToNode"
-  ></file-node>
-  <link-node
-    v-else-if="node.type === 'link'"
-    :node="node"
-    :selectedItemPath="selectedItemPath"
-    @select-item="handleOnClick"
-    :pathToParent="pathToNode"
-  ></link-node>
+  ></item-node>
 </template>
 
 
 <script>
-import FileNode from "./FileNode.vue";
-import LinkNode from "./LinkNode.vue";
+import ItemNode from "./ItemNode.vue";
 
 export default {
   name: "Directory",
@@ -59,8 +51,7 @@ export default {
     };
   },
   components: {
-    FileNode,
-    LinkNode,
+    ItemNode,
   },
   computed: {
     classObject: function () {
